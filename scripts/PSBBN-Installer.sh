@@ -551,12 +551,12 @@ HDL_TOC() {
 INSTALL_SPLASH(){
     clear
         cat << "EOF"
-                  ______  _________________ _   _   _____          _        _ _           
-                  | ___ \/  ___| ___ \ ___ \ \ | | |_   _|        | |      | | |          
-                  | |_/ /\ `--.| |_/ / |_/ /  \| |   | | _ __  ___| |_ __ _| | | ___ _ __ 
-                  |  __/  `--. \ ___ \ ___ \ . ` |   | || '_ \/ __| __/ _` | | |/ _ \ '__|
-                  | |    /\__/ / |_/ / |_/ / |\  |  _| || | | \__ \ || (_| | | |  __/ |   
-                  \_|    \____/\____/\____/\_| \_/  \___/_| |_|___/\__\__,_|_|_|\___|_|   
+                   ______  _________________ _   _   _____          _        _ _           
+                   | ___ \/  ___| ___ \ ___ \ \ | | |_   _|        | |      | | |          
+                   | |_/ /\ `--.| |_/ / |_/ /  \| |   | | _ __  ___| |_ __ _| | | ___ _ __ 
+                   |  __/  `--. \ ___ \ ___ \ . ` |   | || '_ \/ __| __/ _` | | |/ _ \ '__|
+                   | |    /\__/ / |_/ / |_/ / |\  |  _| || | | \__ \ || (_| | | |  __/ |   
+                   \_|    \____/\____/\____/\_| \_/  \___/_| |_|___/\__\__,_|_|_|\___|_|   
 
 
 EOF
@@ -565,14 +565,14 @@ EOF
 UPDATE_SPLASH(){
     clear
     cat << "EOF"
-                _____        __ _                            _   _           _       _       
-               /  ___|      / _| |                          | | | |         | |     | |      
-               \ `--.  ___ | |_| |___      ____ _ _ __ ___  | | | |_ __   __| | __ _| |_ ___ 
-                `--. \/ _ \|  _| __\ \ /\ / / _` | '__/ _ \ | | | | '_ \ / _` |/ _` | __/ _ \
-               /\__/ / (_) | | | |_ \ V  V / (_| | | |  __/ | |_| | |_) | (_| | (_| | ||  __/
-               \____/ \___/|_|  \__| \_/\_/ \__,_|_|  \___|  \___/| .__/ \__,_|\__,_|\__\___|
-                                                                  | |                        
-                                                                  |_|                        
+                 _____        __ _                            _   _           _       _       
+                /  ___|      / _| |                          | | | |         | |     | |      
+                \ `--.  ___ | |_| |___      ____ _ _ __ ___  | | | |_ __   __| | __ _| |_ ___ 
+                 `--. \/ _ \|  _| __\ \ /\ / / _` | '__/ _ \ | | | | '_ \ / _` |/ _` | __/ _ \
+                /\__/ / (_) | | | |_ \ V  V / (_| | | |  __/ | |_| | |_) | (_| | (_| | ||  __/
+                \____/ \___/|_|  \__| \_/\_/ \__,_|_|  \___|  \___/| .__/ \__,_|\__,_|\__\___|
+                                                                   | |                        
+                                                                   |_|                        
 
 
 EOF
@@ -684,10 +684,11 @@ if [ "$MODE" = "install" ]; then
     echo
     echo "1) English"
     echo "2) Japanese"
-    echo "3) German"
-    echo "4) Italian"
-    echo "5) Portuguese (Brazil)"
-    echo "6) Spanish"
+    echo "3) French"
+    echo "4) German"
+    echo "5) Italian"
+    echo "6) Portuguese (Brazil)"
+    echo "7) Spanish"
     echo
     read -p "Enter the number for your chosen language: " choice
 
@@ -702,18 +703,22 @@ if [ "$MODE" = "install" ]; then
             CHAN_UPDATE="yes"
             ;;
         3)
+            LANG="fre"
+            LANG_DISPLAY="French"
+            ;;
+        4)
             LANG="ger"
             LANG_DISPLAY="German"
             ;;
-        4)
+        5)
             LANG="ita"
             LANG_DISPLAY="Italian"
             ;;
-        5)
+        6)
             LANG="por"
             LANG_DISPLAY="Portuguese (Brazil)"
             ;;
-        6)
+        7)
             LANG="spa"
             LANG_DISPLAY="Spanish"
             ;;
@@ -755,7 +760,7 @@ else
         fi
 
         LANG=$(awk -F' *= *' '$1=="LANG"{print $2}' "${OPL}/version.txt")
-        if [[ "$LANG" != "jpn" && "$LANG" != "ger" && "$LANG" != "ita" && "$LANG" != "por" && "$LANG" != "spa"  ]]; then
+        if [[ "$LANG" != "jpn" && "$LANG" != "ger" && "$LANG" != "ita" && "$LANG" != "por" && "$LANG" != "spa" && "$LANG" != "fre" ]]; then
             LANG="eng"
         fi
 
@@ -822,7 +827,7 @@ if [ "$OS" = "PSBBN" ]; then
     fi
 
     if [ "$LANG_UPDATE" != "no" ] || [ "$MODE" != "update" ]; then
-        downoad_latest_file "language-pak"
+        downoad_latest_file "language-pak-$LANG"
         LANG_PACK="${ASSETS_DIR}/${LATEST_FILE}"
     fi
 
@@ -881,36 +886,45 @@ if [ "$PSBBN_UPDATE" != "no" ] || [ "$MODE" != "update" ]; then
     if [ "$MODE" = "update" ]; then
         UPDATE_SPLASH
     fi
-    echo "====================================== PSBBN Definitive Patch v$LATEST_VERSION ======================================="
-    if [ "$LATEST_VERSION" = "4.1.0" ]; then
+    echo "======================================= PSBBN Definitive Patch v$LATEST_VERSION ========================================"
+    if [ "$LATEST_VERSION" = "4.2.0" ]; then
         echo
-        echo "            New Multilingual Support:"
-        echo "            - The PSBBN Definitive Project now supports English, Japanese, German, Italian,"
-        echo "              Portuguese (Brazil), and Spanish."
-        echo "            - Select your preferred language during PSBBN and HOSDMenu installation."
-        echo "            - The language can also be changed later from the Optional Extras menu."
-        echo "            - When the language is set to Japanese, Japan-region games will appear in the"
-        echo "              PSBBN Game Collection and HOSDMenu's Browser using their original Japanese titles."
-        echo "            - When the language is set to Japanese, the original Japanese online game channels"
-        echo "              can be accessed from the PSBBN Game Channel."
+        echo "          New to Version 4.2.0"
+        echo "          - The Game Channel has been renamed to the Internet Channel, reflecting its online focus."
+        echo "          - New online channels added! BANDAI CHANNEL, So-Net, and BIGLOBE."
+        echo "          - Download new game trailer in higher quality, with thumbnails."
+        echo "          - French language support is now available for PSBBN."
+    fi
+    if [ "$LATEST_VERSION" = "4.2.0" ] || [ "$LATEST_VERSION" = "4.1.0" ]; then
         echo
-        echo "            New Features:"
-        echo "            - OSDMenu MBR and HOSDMenu have been updated to version 1.2.0."
-        echo "            - Selecting \"Install Games and Apps\" from the main menu will install the all-new"
-        echo "              OSDMenu Configurator."
-        echo "            - The options \"Install Movies\" and \"Install Photos\" are now available in the"
-        echo "              Install Media menu."
-        echo "            - You can now change screen settings and clear the art & icon cache in the"
-        echo "              Optional Extras menu."
+        echo "          New to Version 4.1.0"
+        echo "          Multilingual Support:"
+        echo "          - The PSBBN Definitive Project now supports English, Japanese, German, Italian, "
+        echo "            Portuguese (Brazil), and Spanish."
+        echo "          - Select your preferred language during PSBBN and HOSDMenu installation."
+        echo "          - The language can also be changed later from the Optional Extras menu."
+        echo "          - When the language is set to Japanese, Japan-region games will appear in the"
+        echo "            PSBBN Game Collection and HOSDMenu's Browser using their original Japanese titles."
+        echo "          - When the language is set to Japanese, the original Japanese online game channels"
+        echo "            can be accessed from the PSBBN Game Channel."
         echo
-        echo "        Full release notes on GitHub: https://github.com/CosmicScale/PSBBN-Definitive-English-Patch"  
+        echo "          New Features:"
+        echo "          - OSDMenu MBR and HOSDMenu have been updated to version 1.2.0."
+        echo "          - Selecting \"Install Games and Apps\" from the main menu will install the all-new"
+        echo "            OSDMenu Configurator."
+        echo "          - The options \"Install Movies\" and \"Install Photos\" are now available in the"
+        echo "            Install Media menu."
+        echo "          - You can now change screen settings and clear the art & icon cache in the"
+        echo "            Optional Extras menu."
         echo
-        echo "        Watch the latest video covering this update: https://youtu.be/_jKzzsClgOY"
+        echo "          Full release notes on GitHub: https://github.com/CosmicScale/PSBBN-Definitive-Project"  
+        echo
+        echo "          Watch the latest video covering this update: https://youtu.be/_jKzzsClgOY"
     fi
     echo
-    echo "============================================================================================================"
+    echo "=============================================================================================================="
     echo
-    read -n 1 -s -r -p "                                   Press any key to return to continue..." </dev/tty
+    read -n 1 -s -r -p "                                    Press any key to return to continue..." </dev/tty
     echo
 fi
 
@@ -1569,7 +1583,7 @@ if [ "$MODE" = "install" ]; then
 else
     UPDATE_SPLASH
     if [ "$OS" = "PSBBN" ]; then
-        echo "=============================== [✓] PS2 System Software Successfully Updated ===============================" | tee -a "${LOG_FILE}"
+        echo "================================ [✓] PS2 System Software Successfully Updated ================================" | tee -a "${LOG_FILE}"
     fi
     echo
     if [ "$PSBBN_UPDATE" != "no" ]; then
@@ -1589,22 +1603,6 @@ else
         echo "   OSDMenu System Software updated to version: $LATEST_OSD" | tee -a "${LOG_FILE}"
         echo
         echo "   The OSDMenu changelog can be found here: https://github.com/pcm720/OSDMenu/releases"
-        if [ "$LATEST_OSD" == "1.2.0" ] && [ "$PSBBN_UPDATE" == "no" ]; then
-            echo
-            echo "   New Features:"
-            echo "   - Italian, Portuguese (Brazil), and Spanish have been added as additional languages."
-            echo "     The language can be changed in the Optional Extras menu."
-            echo "   - Selecting \"Install Games and Apps\" from the main menu will install the all-new OSDMenu Configurator."
-            echo "   - You can now clear the art & icon cache in the Optional Extras menu."
-            echo
-            echo "   New Features Exclusive to PSBBN:"
-            echo "   - The options \"Install Movies\" and \"Install Photos\" are now available in the Install Media menu."
-            echo "   - You can now change screen settings in the Optional Extras menu."
-            echo
-            echo "   Full release notes on GitHub: https://github.com/CosmicScale/PSBBN-Definitive-English-Patch"
-            echo
-            echo "   Watch the latest video covering this update: https://youtu.be/_jKzzsClgOY"
-        fi
     fi
 
     if [ "$PSBBN_UPDATE" != "no" ] && version_le "${psbbn_version:-0}" "3.00"; then
@@ -1626,11 +1624,11 @@ else
         echo "   NOTE: If you previously swapped the X and O buttons, you will need to do so again in the Extras menu."
     fi
     echo
-    echo "============================================================================================================"
+    echo "=============================================================================================================="
 fi
 echo
 if [ "$MODE" = "update" ]; then
-    echo -n "                                   "
+    echo -n "                                    "
 fi
 read -n 1 -s -r -p "Press any key to return to the menu..." </dev/tty
 echo

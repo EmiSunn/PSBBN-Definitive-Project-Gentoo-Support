@@ -422,10 +422,11 @@ echo "Please select a language from the list below:"
 echo
 echo "1) English"
 echo "2) Japanese"
-echo "3) German"
-echo "4) Italian"
-echo "4) Portuguese (Brazil)"
-echo "6) Spanish"
+echo "3) French"
+echo "4) German"
+echo "5) Italian"
+echo "6) Portuguese (Brazil)"
+echo "7) Spanish"
 echo
 read -p "Enter the number for your chosen language: " choice
 
@@ -437,15 +438,18 @@ case "$choice" in
         LANG="jpn"
         ;;
     3)
-        LANG="ger"
+        LANG="fre"
         ;;
     4)
-        LANG="ita"
+        LANG="ger"
         ;;
     5)
-        LANG="por"
+        LANG="ita"
         ;;
     6)
+        LANG="por"
+        ;;
+    7)
         LANG="spa"
         ;;
     *)

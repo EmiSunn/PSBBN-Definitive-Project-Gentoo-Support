@@ -25,11 +25,11 @@ This project uses [webhook.site](https://webhook.site/) to automatically contrib
 
 # Features
 - A full translation of the stock Japanese BB Navigator version 0.32 — All binaries, XML files, textures, and pictures have been translated[*](#known-issues)
-- Available in English, German, Italian, Portuguese (Brazil), Spanish, and the original Japanese
+- Available in English, German, Italian, Portuguese (Brazil), Spanish, French, and the original Japanese
 - Compatible with any fat model PS2 console as well as [PS2 Slim SCPH-700xx models](#early-scph-1000018000-and-slim-scph-700xx-consoles) with an [IDE Resurrector](https://gusse.in/shop/ps2-modding-parts/ide-resurrector-origami-v0-7-flex-cable-for-ps2-slim-spch700xx/) or similar hardware mod, regardless of region
 - DNAS authorization checks bypassed to enable access the online channels
-- English translations of the [online game channels](#game-channel) from Sony, Hudson, EA, Konami, Capcom, Namco, KOEI, and Bandai hosted by vitas155 at [psbbn.ru](https://psbbn.ru/) (work in progress)
-- Access the original Japanese [online game channels](#game-channel) if you select Japanese as your language
+- English translations of the [online channels](#internet-channel) from Sony, Hudson, EA, Konami, Capcom, Namco, KOEI, and Bandai hosted by vitas155 at [psbbn.ru](https://psbbn.ru/) (work in progress)
+- Access the original Japanese [online channels](#internet-channel) if you select Japanese as your language
 - **Audio Player** feature re-added to the [Music Channel](#music-channel) from an earlier release of PSBBN, allowing compatibility with NetMD MiniDisc Recorders[*](#known-issues)
 - Associated manual pages and troubleshooting regarding the **Audio Player** feature translated and re-added to the user guide
 - Japanese QWERTY on-screen keyboard replaced with US English on-screen keyboard[*](#known-issues)
@@ -55,6 +55,13 @@ This project uses [webhook.site](https://webhook.site/) to automatically contrib
 - Install [optional extras](#optional-extras) such a [PS2 Linux](#install-ps2-linux)
 
 # Changelog
+
+**March 26th, 2026 - 4.2.0 Update: New Online Channels plus French Localisation**
+- PSBBN system software updated to patch 4.2.0
+- The Game Channel has been renamed to the **[Internet Channel](#internet-channel)**, reflecting its online focus
+- New online channels added: BANDAI CHANNEL, So-Net, and BIGLOBE
+- Download new game trailer in higher quality, with thumbnails
+- French language support is now available for PSBBN
 
 **March 5th, 2026 - Movie and Photo Installers, OSDMenu Configurator and more!**  
 <p></p>
@@ -128,7 +135,7 @@ The PSBBN Definitive English Patch started life in 2023 as an English language p
 
 PSBBN is now available in English, German, Italian, and the original Japanese, with a French translation coming soon. You will be given a choice of languages when installing PSBBN. The language can also be changed later in the **[Extras Menu](#optional-extras)**.
 
-When the language is set to Japanese, titles of Japanese-region games are displayed in Japanese and sorted in “gojūon” (五十音) order in both the **[PSBBN Game Collection](#game-collection)** and the **[HOSDMenu Browser](#hosdmenu)**. In addition, the original Japanese online channels are also accessible from the **[Game Channel](#game-channel)**.
+When the language is set to Japanese, titles of Japanese-region games are displayed in Japanese and sorted in “gojūon” (五十音) order in both the **[PSBBN Game Collection](#game-collection)** and the **[HOSDMenu Browser](#hosdmenu)**. In addition, the original Japanese online channels are also accessible from the **[Internet Channel](#internet-channel)**.
 
 **Full release notes**  
 
@@ -138,7 +145,7 @@ When the language is set to Japanese, titles of Japanese-region games are displa
 
 **[PSBBN Installer:](#install-psbbn-and-hosdmenu)**
 - Added an option to select a language when installing PSBBN
-- Selecting Japanese will also install the original Japanese **[online game channels](#game-channel)**
+- Selecting Japanese will also install the original Japanese **[online channels](#internet-channel)**
 
 **[Update PSBBN Software:](#update-ps2-system-software)**
 - Now updates the PSBBN System Software and language pack to the latest version
@@ -641,7 +648,7 @@ Installs both **PSBBN** and [HOSDMenu](#hosdmenu). Requires and official Sony Ne
 - Formats the drive for a clean installation
 - Prompts you to select a language
 - Downloads and installs the latest versions of the **PSBBN System Software** and **Language Pack** from [archive.org](https://archive.org/)
-- When the language is set to Japanese, the [Online Game Channels](#game-channel) are also downloaded and installed from [archive.org](https://archive.org/)
+- When the language is set to Japanese, the [Online Channels](#internet-channel) are also downloaded and installed from [archive.org](https://archive.org/)
 - Installs [OSDMenu MBR](#osdmenu-mbr) and [HOSDMenu](#hosdmenu)
 - Creates partitions for [POPS](#popstarter-and-virtual-memory-cards) (to store PS1 games), [Music](#music-installer), and Contents (to store movies and photos), with user-defined sizes on the first 128 GB of the drive.
 - Reserves space for 800 **Launcher partitions**, used to launch games and apps.
@@ -657,7 +664,7 @@ Installs [HOSDMenu](#hosdmenu) without PSBBN. Compatible with 3rd party HDD adap
 - Runs [APA-Jail](#apa-jail), creating an exFAT partition using all remaining disk space (up to 2 TB) for the storage of PS2 games and homebrew apps
 
 ## Update PS2 System Software
-Selecting this option checks online for the latest versions of the **PSBBN System Software**, **Language Pack**, [Online Game Channels](#game-channel), and [OSDMenu](#hosdmenu), then automatically installs any available updates. All your games, settings, and personal data remain intact.
+Selecting this option checks online for the latest versions of the **PSBBN System Software**, **Language Pack**, [Online Channels](#internet-channel), and [OSDMenu](#hosdmenu), then automatically installs any available updates. All your games, settings, and personal data remain intact.
 
 ## Game and App Installer
 Fully automates the installation of PS1 and PS2 games, as well as homebrew apps:
@@ -756,7 +763,7 @@ This option lets you swap the functions of the **×** and **○** buttons on you
 **NOTE: This feature applies to PSBBN only. It does not swap the button layout for the POPS in-game reset dialog when exiting a PS1 game, or HOSDMenu.**  
 
 ### Change Language
-When **PSBBN** is installed, this option changes the system language of PSBBN. Select from English, German, Italian, Portuguese (Brazil), Spanish, and the original Japanese. More languages will be added with future updates. For Japanese users, it also downloads and installs the Japanese versions of the [Online Game Channels](#game-channel).
+When **PSBBN** is installed, this option changes the system language of PSBBN. Select from English, German, Italian, Portuguese (Brazil), Spanish, French, and the original Japanese. More languages will be added with future updates. For Japanese users, it also downloads and installs the Japanese versions of the [Online Channels](#internet-channel).
 
 For both **PSBBN** and [HOSDMenu](#hosdmenu) users, this option also updates the [POPS](#popstarter-and-virtual-memory-cards) IGR message and the language preference used by the [Game Installer](#game-and-app-installer).
 
@@ -826,10 +833,9 @@ For physical PlayStation (PS1) discs:
 For physical PlayStation 2 (PS2) discs:
 - Applies automatic PS2 logo patching, allowing [MechaPwn](https://github.com/MechaResearch/MechaPwn) users to launch imports and master discs without skipping the PlayStation 2 logo or encountering a corrupted logo screen.
 
-## Game Channel
-On the **Game Channel**, you can access archives of various publishers’ online channels, just as they appeared in the early 2000s. The channels have been translated into English (work in progress). If you have a Japanese install of PSBBN, you will have access to the original Japanese versions. To view these online channels, your PlayStation 2 system must be connected to the internet.
+## Internet Channel
+On the **Internet Channel**, you can access archives of various publishers’ online channels, just as they appeared in the early 2000s. The channels have been translated into English (work in progress). If you have a Japanese install of PSBBN, you will have access to the original Japanese versions. To view these online channels, your PlayStation 2 system must be connected to the internet.
 - Explore the online channels of various game publishers, including Sony, Hudson, EA, Konami, Capcom, Namco, KOEI, and Bandai.
-
 - Download trailers for *Metal Gear Solid 3: Subsistence*, *Bomberman Online*, and more. Trailers can be downloaded from the **Konami Channel**, **BANDAI Entertainment World**, and the **HUDSON CHANNEL**. Downloaded trailers are saved to an album in the [Movie Channel](#movie-channel).
 - Download artwork and screenshots from the **PlayStation® Now!** channel. Downloaded images are saved to an album in the [Photo Channel](#photo-channel).
 - Play a number of classic games from the Hudson archive, including *Star Soldier*, *Milon’s Secret Castle*, and *Nuts & Milk*. Games can be played by selecting *PLAY GAMES* from the **HUDSON CHANNEL** main menu.
@@ -840,10 +846,10 @@ The **Music Channel** allows you to play back music stored on your PS2's interna
 It also supports exporting music to a NetMD-compatible MiniDisc recorder. However, MiniDisc support is broken in the current version of the PSBBN Definitive Project. If you want to try the MiniDisc functionality, you can use a [legacy version of the PSBBN Definitive English Patch](#legacy-versions-of-the-psbbn-definitive-english-patch).
 
 ## Movie Channel
-The **Movie Channel** allows you to play back movies stored on your PS2's internal drive, organise your movies, and create playlists. Movies can be downloaded from several of the [Online Game Channels](#game-channel), and installed using the [Movie Installer](#movie-installer).
+The **Movie Channel** allows you to play back movies stored on your PS2's internal drive, organise your movies, and create playlists. Movies can be downloaded from several of the [Online Channels](#internet-channel), and installed using the [Movie Installer](#movie-installer).
 
 ## Photo Channel
-The Photo Channel allows you to view photos stored on the PS2's internal drive or a FAT-formatted USB device (USB stick, digital camera, etc.). Photos can be imported from USB devices, and installed using the [Photo Installer](#photo-installer). You can create albums and playlists of your photos. You can also download game artwork and screenshots from the [Online Game Channels](#game-channel).
+The Photo Channel allows you to view photos stored on the PS2's internal drive or a FAT-formatted USB device (USB stick, digital camera, etc.). Photos can be imported from USB devices, and installed using the [Photo Installer](#photo-installer). You can create albums and playlists of your photos. You can also download game artwork and screenshots from the [Online Channels](#internet-channel).
 
 ## OSDMenu MBR
 Written by [pcm720](https://github.com/pcm720). This program is executed on every system boot and when an application is launched from **PSBBN**. It is a homebrew replacement for Sony’s original MBR program. It is responsible for initializing the hardware, as well as launching applications and game discs.
@@ -994,7 +1000,7 @@ If games do not appear in the games list in [NHDDL](#neutrino-and-nhddl) or [OPL
 - All binaries, XML files, textures, and pictures have been translated*
 - Compatible with any fat model PS2 console as well as PS2 Slim SCPH-700xx models with an [IDE Resurrector](#early-scph-1000018000-and-slim-scph-700xx-consoles) or similar hardware mod, regardless of region
 - DNAS authorization checks bypassed to enable access the online channels
-- Online game channels from Sony, Hudson, EA, Konami, Capcom, Namco, and KOEI have been translated into English. Hosted courtesy of vitas155 at [psbbn.ru](https://psbbn.ru/)
+- Online channels from Sony, Hudson, EA, Konami, Capcom, Namco, and KOEI have been translated into English. Hosted courtesy of vitas155 at [psbbn.ru](https://psbbn.ru/)
 - "Audio Player" feature re-added to the Music Channel from an earlier release of PSBBN, allowing compatibility with NetMD MiniDisc Recorders
 - Associated manual pages and troubleshooting regarding the "Audio Player" feature translated and re-added to the user guide
 - Japanese QWERTY on-screen keyboard replaced with US English on-screen keyboard**
@@ -1122,6 +1128,7 @@ Disable DNAS Authentication:
 - PSBBN Italian translation by [plamadika](https://github.com/plamadika) & [lcipria](https://github.com/lcipria)
 - Portuguese (Brazil) translation by [Emerson Teles (Emertels)](https://github.com/Emertels)
 - Spanish translation by [Ignacio Trillo (Nacheras)](https://github.com/Nacheras) & [ViZoRRetrogames](https://github.com/ViZoRRetrogames)
+- French translation by [Bistroww](https://github.com/Bistroww) & [iSlickick](https://github.com/iSlickick)
 - Uses APA-Jail code from the [PS2 HDD Decryption Helper](https://www.psx-place.com/resources/ps2-hdd-decryption-helper.1507/) by [Berion](https://www.psx-place.com/members/berion.1431/)
 - Contains code from [`list_builder.py`](https://github.com/sync-on-luma/xebplus-neutrino-loader-plugin/blob/main/List%20Builder/list_builder.py) from [XEB+ neutrino Launcher Plugin](https://github.com/sync-on-luma/xebplus-neutrino-loader-plugin) by [sync-on-luma](https://github.com/sync-on-luma)
 - Contains code from [`ps2iconmaker.sh`](https://github.com/CosmicScale/HDD-OSD-Icon-Database/issues/1#issuecomment-2852499188) by [Sakitoshi](https://github.com/Sakitoshi)

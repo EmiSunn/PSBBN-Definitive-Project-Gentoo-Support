@@ -969,13 +969,15 @@ option_three() {
 
                                2) Japanese
 
-                               3) German
+                               3) French
 
-                               4) Italian
+                               4) German
 
-                               5) Portuguese (Brazil)
+                               5) Italian
 
-                               6) Spanish
+                               6) Portuguese (Brazil)
+
+                               7) Spanish
 
                                b) Back
 
@@ -994,21 +996,26 @@ EOF
                 break
                 ;;
             3)
+                LANG="fre"
+                LANG_DISPLAY="French"
+                break
+                ;;
+            4)
                 LANG="ger"
                 LANG_DISPLAY="German"
                 break
                 ;;
-            4)
+            5)
                 LANG="ita"
                 LANG_DISPLAY="Italian"
                 break
                 ;;
-            5)
+            6)
                 LANG="por"
                 LANG_DISPLAY="Portuguese (Brazil)"
                 break
                 ;;
-            6)
+            7)
                 LANG="spa"
                 LANG_DISPLAY="Spanish"
                 break
@@ -1019,7 +1026,7 @@ EOF
                 ;;
             *)
                 echo
-                echo -n "                               Invalid choice, enter a number between 1 and 6."
+                echo -n "                               Invalid choice, enter a number between 1 and 7."
                 sleep 3
                 ;;
         esac
@@ -1037,7 +1044,7 @@ EOF
         spinner $WGET_PID "Checking for latest version of the PSBBN Definitive Patch"
 
         get_latest_file "language-pak-$LANG" "$LANG_DISPLAY language pack" || return 1
-        downoad_latest_file "language-pak" || return 1
+        downoad_latest_file "language-pak-$LANG" || return 1
         LANG_PACK="${ASSETS_DIR}/${LATEST_FILE}"
 
         if [[ "$LANG" == "jpn" ]]; then
