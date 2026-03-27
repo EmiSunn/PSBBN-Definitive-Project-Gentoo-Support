@@ -3,7 +3,7 @@
 # PSBBN Installer form the PSBBN Definitive Project
 # Copyright (C) 2024-2026 CosmicScale
 #
-# <https://github.com/CosmicScale/PSBBN-Definitive-English-Patch>
+# <https://github.com/CosmicScale/PSBBN-Definitive-Project>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
@@ -795,7 +795,7 @@ if [ "$OS" = "PSBBN" ]; then
 
     spinner $WGET_PID "Checking for latest version of the PSBBN Definitive Patch"
 
-    get_latest_file "psbbn-definitive-patch" "PSBBN Definitive English patch"
+    get_latest_file "psbbn-definitive-patch" "PSBBN Definitive Patch"
 
     if [ "$MODE" = "update" ]; then
         echo "Current version: $psbbn_version" | tee -a "${LOG_FILE}"

@@ -3,7 +3,7 @@
 # PSBBN Definitive Project
 # Copyright (C) 2024-2026 CosmicScale
 #
-# <https://github.com/CosmicScale/PSBBN-Definitive-English-Patch>
+# <https://github.com/CosmicScale/PSBBN-Definitive-Project>
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
@@ -100,7 +100,7 @@ copy_log() {
 git_update() {
     # Check if the current directory is a Git repository
     if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
-        error_msg "This script cannot continue due to an unsupported installation." "The PSBBN Definitive Project is a rolling release." "To ensure you are always running the latest version, follow the installation instructions here:" "https://github.com/CosmicScale/PSBBN-Definitive-English-Patch?tab=readme-ov-file#user-guide"
+        error_msg "This script cannot continue due to an unsupported installation." "The PSBBN Definitive Project is a rolling release." "To ensure you are always running the latest version, follow the installation instructions here:" "https://github.com/CosmicScale/PSBBN-Definitive-Project?tab=readme-ov-file#user-guide"
     else
         # Fetch updates from the remote
         git fetch >> "${LOG_FILE}" 2>&1
@@ -126,7 +126,7 @@ git_update() {
 
                 # Pull the latest changes
                 if ! git pull --ff-only >> "${LOG_FILE}" 2>&1; then
-                    error_msg "Update failed. Delete the PSBBN-Definitive-English-Patch directory and run the command:" "git clone https://github.com/CosmicScale/PSBBN-Definitive-English-Patch.git" "Then try running the script again."
+                    error_msg "Update failed. Delete the PSBBN-Definitive-Project directory and run the command:" "git clone https://github.com/CosmicScale/PSBBN-Definitive-Project.git" "Then try running the script again."
                 fi
                 echo
                 echo "[✓] The repository has been successfully updated." | tee -a "${LOG_FILE}"
@@ -205,7 +205,7 @@ check_required_files() {
 
     # If any were missing, exit with error
     if [[ "$missing" == true ]]; then
-        error_msg "Essential files not found." "The script must be run from the 'PSBBN-Definitive-English-Patch' directory."
+        error_msg "Essential files not found." "The script must be run from the 'PSBBN-Definitive-Project' directory."
     fi
 }
 
@@ -592,7 +592,7 @@ else
         timeout 20 wget -O "$HTML_FILE" "$URL" -o - >> "$LOG_FILE" 2>&1
 
         if [[ -n "$psbbn_version" ]]; then
-            get_latest_file "psbbn-definitive-patch" "PSBBN Definitive English patch"
+            get_latest_file "psbbn-definitive-patch" "PSBBN Definitive Patch"
 
             if [ "$(printf '%s\n' "$LATEST_VERSION" "$psbbn_version" | sort -V | tail -n1)" != "$psbbn_version" ]; then
                 PSBBN_UPDATE="YES"

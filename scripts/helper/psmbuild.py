@@ -4,7 +4,7 @@
 PSM Builder form the PSBBN Definitive Project
 Copyright (C) 2024-2026 CosmicScale
 
-<https://github.com/CosmicScale/PSBBN-Definitive-English-Patch>
+<https://github.com/CosmicScale/PSBBN-Definitive-Project>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 

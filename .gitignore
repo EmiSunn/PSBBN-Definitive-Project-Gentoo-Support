@@ -9,6 +9,7 @@ scripts/assets/NHDDL/boot.kelf
 scripts/assets/NHDDL/system.cnf
 scripts/assets/extras/
 scripts/assets/ps2str/
+scripts/helper/genvmc
 scripts/helper/.libs
 games/ART/*.png
 scripts/assets/HDD-OSD/
