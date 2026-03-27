@@ -25,7 +25,6 @@
         pkgs = import nixpkgs { inherit system; };
         pythonEnv = pkgs.python3.withPackages (
           ps: with ps; [
-            pip
             lz4
             natsort
             mutagen
@@ -38,6 +37,8 @@
       {
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
+            stdenv.cc
+            icu
             bash
             pythonEnv
             axel
@@ -55,7 +56,6 @@
             fuse2
             bchunk
             e2fsprogs
-            libicu-dev
             pkg-config
             patchelf
             ffmpegthumbnailer
