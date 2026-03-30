@@ -38,7 +38,8 @@ IGNORED_IMAGES = [
     "https://media.ign.com/boards/images/icons2/supers_ghostrider.gif",
     "https://assets-prd.ignimgs.com/avatars/54580a4b06017ecee2c408bc/20210304_001650-1657323628824.jpg",
     "https://assets-prd.ignimgs.com/avatars/4ec80936e4b0ca04b5c015bc/Fran00048-1603147509320.jpg",
-    "https://assets1.ignimgs.com/kraken/ign30-logo-alt.png"
+    "https://assets1.ignimgs.com/kraken/ign30-logo-alt.png",
+    "https://assets1.ignimgs.com/kraken/ign30-logo.png"
 ]
 
 SEARCH_DOMAINS = [
