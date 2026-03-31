@@ -810,7 +810,7 @@ If you have problems saving OPL settings, or if games do not appear in the games
 ## POPStarter
 **POPS** is an official Sony PS1 emulator for PS2, originally released exclusively in Japan as a way to distribute PS1 games over the internet to **PSBBN** users. **POPStarter** is a homebrew launcher for **POPS** that enables the emulator to play any PS1 game from internal and external drives.
 
-Hotkey button combinations are supported for disc swapping and various other options. Full details can be found in the **Manual** of each installed PS1 game. To access the it, in **PSBBN** select a game in the **[Game Collection](#game-collection)**, press **△** then select **Manual**.
+Hotkey button combinations are supported for disc swapping and various other options. Full details can be found in the **Manual** of each installed PS1 game. To access it, in **PSBBN** select a game in the **[Game Collection](#game-collection)**, press **△** then select **Manual**.
 
 ## Virtual Memory Cards
 A **Virtual Memory Card (VMC)** allows you to store game progress on your PlayStation 2’s internal drive rather than on a standard Memory Card.
@@ -819,7 +819,7 @@ A **POPStarter VMC** is created for every PS1 game. These can be found in **PSBB
 
 When running the [Game Installer](#install-games-and-apps), you will be given the option to enable **VMCs** for all your PS2 games.
 
-Both PS1 and PS2 games support **VMC Groups**, which allow certain games to interact with each other’s save data. For example, *Metal Gear Solid’s* Psycho Mantis can comment on other Konami games you've played, and money from Gran Turismo 3 can be transferred to Gran Turismo 4.
+Both PS1 and PS2 games support **VMC Groups**, enabling certain games to share a VMC and access save data created by other titles. For example, *Metal Gear Solid’s* Psycho Mantis can comment on other Konami games you've played, and money from Gran Turismo 3 can be transferred to Gran Turismo 4.
 
 ## Game ID
 **Game ID** for the **Retro GEM**, **MemCard Pro 2**, and **SD2PSX** is fully supported when launching PS1 games, PS2 games, and homebrew apps from the [PSBBN Game Collection](#game-collection) and [HOSDMenu](#hosdmenu), as well as physical PS1 and PS2 game discs.
