@@ -601,17 +601,18 @@ CREATE_PS2_VMC() {
 
         # Determine VMC name and size
         if [[ -n "${vmc_groups_by_id[$game_id]}" ]]; then
-            vmc_name="${vmc_groups_by_id[$game_id]}"
-            vmc_size="${vmc_sizes_by_group[$vmc_name]}"
+            group_name="${vmc_groups_by_id[$game_id]}"
+            vmc_size="${vmc_sizes_by_group[$group_name]}"
+            vmc_name="${group_name}_0"
         else
-            vmc_name="$game_id"
+            vmc_name="${game_id}_0"
             vmc_size="8"
         fi
 
         vmc_file="${vmc_name}.bin"
 
         # Create VMC .bin if it doesn't already exist
-        if [[ ! -f "${OPL}/VMC/${vmc_file}" ]] && [[ -z "${created_vmcs[$vmc_name]}" ]]; then
+        if [[ ! -f "${OPL}/VMC/${vmc_file}" && ! -f "${OPL}/VMC/${vmc_name%_0}.bin" ]] && [[ -z "${created_vmcs[$vmc_name]}" ]]; then
 
             # Check available space (in KB)
             available_kb=$(df -Pk "${OPL}" | awk 'NR==2 {print $4}')
