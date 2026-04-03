@@ -33,7 +33,7 @@ This project uses [webhook.site](https://webhook.site/) to automatically contrib
 - **Audio Player** feature re-added to the [Music Channel](#music-channel) from an earlier release of PSBBN, allowing compatibility with NetMD MiniDisc Recorders[*](#known-issues)
 - Associated manual pages and troubleshooting regarding the **Audio Player** feature translated and re-added to the user guide
 - Japanese QWERTY on-screen keyboard replaced with US English on-screen keyboard[*](#known-issues)
-- The **×** and **○** buttons have been swapped: **×** is now Enter, and **○** is now Back.
+- The **×** and **○** buttons have been swapped: **×** is now Enter, and **○** is now Back[*](#known-issues)
 - Support for the PlayStation 2 DVD remote control[*](#known-issues)
 - Direct link to the [Game Collection](#game-collection) in the Top Menu
 - Launch up to 800 titles — including PS1 games, PS2 games, and homebrew apps — directly from the [Game Collection](#game-collection)
@@ -993,7 +993,8 @@ If games do not appear in the games list in [NHDDL](#neutrino-and-nhddl) or [OPL
 - Instances in feega where some Japanese text couldn't be translated due to it being hard-coded in an encrypted file. Atok software has not been translated.  
 - MiniDisc support is broken as of patch version 2.10 and above. I hope to fix this in a future update  
 - The default on-screen keyboard is set to Japanese. However, a US English on-screen keyboard has been added, though you’ll need to press the `SELECT` button multiple times to switch to it. There's a bug where spacebar doesn't work on the US English on-screen keyboard, but you can enter a space by pressing the **△** button on the controller instead.  
-- The PS2 DVD Remote Control can behave erratically if no controller is plugged into Controller Port 1  
+- The × and ○ button swap is only supported on DualShock 2 controllers
+- Media buttons on the PS2 DVD Remote Control are only supported on SCPH-5000x consoles with a built-in IR receiver. The remote control can behave erratically if no controller is plugged into Controller Port 1.
 - Music installed with the Music Installer is only playable if written to the first 3 GB of the music partition. Music ripped from audio CDs in the [Music Channel](#music-channel) is unaffected and can use the full capacity of the partition.
 - PSBBN only supports dates up to the end of 2030. When setting the time and date, the year must be set to 2030 or below.  
 - PSBBN will freeze when launching games/apps if a mod chip is active. To use PSBBN, mod chips must be disabled.  
