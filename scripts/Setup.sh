@@ -118,7 +118,7 @@ elif [ -x "$(command -v emerge)" ]; then
 elif [ -n "$IN_NIX_SHELL" ]; then
     error_msg "Running in Nix environment - packages should be provided by flake and setup should not be run."
 else
-    error_msg "No supported package manager found (apt-get, dnf, pacman)."
+    error_msg "No supported package manager found (apt-get, dnf, pacman, emerge)."
 fi
 
 if [ $? -ne 0 ]; then
