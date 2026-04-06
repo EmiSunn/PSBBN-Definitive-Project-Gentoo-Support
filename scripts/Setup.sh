@@ -109,6 +109,11 @@ elif [ -x "$(command -v pacman)" ]; then
         i386="lib32-glibc"
     fi
     sudo pacman -S --needed --noconfirm axel imagemagick xxd python pyenv python-pip bc rsync curl zip unzip wget ffmpeg lvm2 fuse2 dosfstools e2fsprogs glibc exfatprogs util-linux parted bchunk base-devel icu pkgconf ffmpegthumbnailer $i386 2>&1 | tee -a "${LOG_FILE}"
+elif [ -x "$(command -v emerge)" ]; then
+    if [[ "$arch" = "x86_64" ]]; then
+        i386="glibc"
+    fi
+    sudo USE= 'lvm' emerge --ask net-misc/axel media-gfx/imagemagick dev-util/xxd dev-lang/python dev-python/pip sys-devel/bc net-misc/rsync net-misc/curl app-arch/zip app-arch/unzip net-misc/wget media-video/ffmpeg sys-fs/lvm2 sys-fs/fuse sys-fs/dosfstools sys-fs/e2fsprogs sys-fs/exfatprogs sys-apps/util-linux sys-block/parted app-cdr/bchunk dev-libs/icu dev-util/pkgconf media-video/ffmpegthumbnailer $i386 2>&1 | tee -a "${LOG_FILE}"
 elif [ -n "$IN_NIX_SHELL" ]; then
     error_msg "Running in Nix environment - packages should be provided by flake and setup should not be run."
 else
